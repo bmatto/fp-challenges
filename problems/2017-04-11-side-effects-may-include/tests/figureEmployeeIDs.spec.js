@@ -31,26 +31,27 @@ describe('figureEmployeeIDs', () => {
 
   it('should return a list of employee data mapped with their employee ids', () => {
     const employees = getEmployees();
+    const seed = Math.random();
 
     const employeesWithIDs = [
       {
         name : 'Daniel',
         dateOfBirth : '1984-01-12',
-        id : 'emp-1-'+Math.random()
+        id : 'emp-1-'+seed
       },
       {
         name : 'Jack',
         dateOfBirth : '1946-04-06',
-        id : 'emp-2-'+Math.random()
+        id : 'emp-2-'+seed
       },
       {
         name : 'Jane',
         dateOfBirth : '1989-08-30',
-        id : 'emp-3-'+Math.random()
+        id : 'emp-3-'+seed
       }
     ]
 
-    expect(figureEmployeeIDs(employees)).to.deep.equal(employeesWithIDs);
+    expect(figureEmployeeIDs(employees, seed)).to.deep.equal(employeesWithIDs);
   });
 
   it('should not mutate the input employees parameter', () => {

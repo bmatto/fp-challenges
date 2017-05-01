@@ -4,9 +4,11 @@
  * This function isn't so pure. Refactor it!
  */
 exports.default = function(people) {
-  people.sort((person1, person2) => {
+  const _people = people.slice(0)
+
+  _people.sort((person1, person2) => {
     return new Date(person1.dateOfBirth) - new Date(person2.dateOfBirth);
   });
 
-  return people[0];
+  return _people[0];
 }
